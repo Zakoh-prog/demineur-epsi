@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Demineur</title>
+<meta charset="UTF-8" />
+<script src="demineur.js"></script>
+<link rel="stylesheet" href="demineur.css">
+<script>
+    /* on load scripts */
+    window.onload = function() {
+        Demineur.initialise();
+    }
+</script>
+<?php include("connexion.php"); ?>
+</head>
+<body>
+    <div class="page">
+        <h1 id="hh">
+            Démineur
+        </h1>
+        <h3 id="cpt"></h3>
+        <div class="diffe">
+            <select name="diff" id="diff-select">
+                <option value="debutant" >debutant</option>
+                <option value="intermediaire">intermediaire</option>
+                <option value="expert">expert</option>
+                <option value="maitre">maitre</option>
+            </select>
+        </div>
+        <button id='lancerPartie' onclick='Demineur.partie.timer=0;Demineur.startGame(document.getElementById("diff-select").value);'>Nouvelle Partie</button>
+
+        <div class="game" id="plateau">
+        </div>
+        <div id="result" class="result">
+        </div>
+    </div>
+</body>
+</html>
